@@ -16,6 +16,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 		},
 		DefaultTransform: transform.FromGo().NullIfZero(),
 		TableMap: map[string]*plugin.Table{
+			"tomba_account":  tableTombaAccount(ctx),
 			"tomba_author":   tableTombaAuthor(ctx),
 			"tomba_count":    tableTombaCount(ctx),
 			"tomba_enrich":   tableTombaEnrich(ctx),

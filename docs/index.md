@@ -2,7 +2,7 @@
 organization: Turbot
 category: ["saas"]
 icon_url: "/images/plugins/turbot/tomba.svg"
-brand_color: "#0095E5"
+brand_color: "#1853DB"
 display_name: "tomba.io"
 short_name: "tomba"
 description: "Steampipe plugin to query Domain or Email information from tomba.io."

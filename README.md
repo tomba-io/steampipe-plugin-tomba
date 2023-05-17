@@ -1,10 +1,10 @@
-![image](https://hub.steampipe.io/images/plugins/turbot/tomba-social-graphic.png)
+![image](https://hub.steampipe.io/images/plugins/tomba-io/tomba-social-graphic.png)
 
 # tomba.io Plugin for Steampipe
 
 Use SQL to search or verify lists of email addresses in minutes using [tomba.io](https://tomba.io).
 
-- **[Get started →](https://hub.steampipe.io/plugins/turbot/tomba)**
+- **[Get started →](https://hub.steampipe.io/plugins/tomba-io/tomba)**
 - Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/tomba-io/tomba/tables)
 - Community: [Slack Channel](https://steampipe.io/community/join)
 - Get involved: [Issues](https://github.com/tomba-io/steampipe-plugin-tomba/issues)

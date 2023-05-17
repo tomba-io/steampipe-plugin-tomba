@@ -1,13 +1,13 @@
 ---
 organization: Turbot
 category: ["saas"]
-icon_url: "/images/plugins/turbot/tomba.svg"
+icon_url: "/images/plugins/tomba-io/tomba.svg"
 brand_color: "#1853DB"
 display_name: "tomba.io"
 short_name: "tomba"
 description: "Steampipe plugin to query Domain or Email information from tomba.io."
 og_description: "Query tomba.io with SQL! Open source CLI. No DB required."
-og_image: "/images/plugins/turbot/tomba-social-graphic.png"
+og_image: "/images/plugins/tomba-io/tomba-social-graphic.png"
 ---
 
 # tomba.io + Steampipe

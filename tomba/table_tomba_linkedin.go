@@ -15,8 +15,7 @@ func tableTombaLinkedin(ctx context.Context) *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listLinkedin,
 			KeyColumns: []*plugin.KeyColumn{
-				{
-					Name: "url"},
+				{Name: "url"},
 			},
 		},
 		Columns: []*plugin.Column{
@@ -26,7 +25,7 @@ func tableTombaLinkedin(ctx context.Context) *plugin.Table {
 				Type:        proto.ColumnType_STRING,
 				Hydrate:     urlString,
 				Transform:   transform.FromValue(),
-				Description: "The blog post url",
+				Description: "The URL of the Linkedin. For example, `https://www.linkedin.com/in/alex-maccaw-ab592978`.",
 			},
 			{
 				Name:        "email",

@@ -1,10 +1,10 @@
-module github.com/turbot/steampipe-plugin-tomba
+module github.com/tomba-io/steampipe-plugin-tomba
 
 go 1.19
 
 require (
 	github.com/tomba-io/go v1.0.0
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.3.0
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.4.1
 )
 
 require (

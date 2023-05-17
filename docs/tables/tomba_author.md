@@ -2,11 +2,7 @@
 
 Get detailed information of email address from a blog post url.
 
-**NOTES**:
-
-* the `tomba_author` table
-  requires the `url` field to be specified in all queries, defining the URL
-  to lookup.
+The `tomba_author` table requires the `url` field to be specified in all queries, defining the URL to lookup.
 
 ## Examples
 
@@ -16,11 +12,13 @@ query any blog post URL
 
 ```sql
 select
-  email, first_name, last_name
+   email,
+   first_name,
+   last_name 
 from
-  tomba_author
+   tomba_author 
 where
-  url = 'https://clearbit.com/blog/company-name-to-domain-api';
+   url = 'https://clearbit.com/blog/company-name-to-domain-api';
 ```
 
 ```

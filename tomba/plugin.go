@@ -20,8 +20,8 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"tomba_author":   tableTombaAuthor(ctx),
 			"tomba_count":    tableTombaCount(ctx),
 			"tomba_enrich":   tableTombaEnrich(ctx),
-			"tomba_verifier": tableTombaVerifier(ctx),
 			"tomba_linkedin": tableTombaLinkedin(ctx),
+			"tomba_verifier": tableTombaVerifier(ctx),
 		},
 	}
 	return p

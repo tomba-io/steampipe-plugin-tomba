@@ -2,10 +2,6 @@
 
 Get detailed information of current account.
 
-**NOTES**:
-
-* the `tomba_account` table
-
 ## Examples
 
 ### Info about an Account Information
@@ -14,15 +10,20 @@ query
 
 ```sql
 select
-  *
+   first_name,
+   last_name,
+   email,
+   timezone,
+   country,
+   pricing
 from
-  tomba_account;
+   tomba_account;
 ```
 
 ```
-+------------+-----------+--------------------+-----------------------------------------+-----------------------------+
-| first_name | last_name | email              | secret_token                            | _ctx                        |
-+------------+-----------+--------------------+-----------------------------------------+-----------------------------+
-| Mohamed    | Ben       | b.mohamed@tomba.io | ts_xxxx                                 | {"connection_name":"tomba"} |
-+------------+-----------+--------------------+-----------------------------------------+-----------------------------+
++------------+-----------+--------------------+----------------+---------+------------+
+| first_name | last_name | email              | timezone       | country | pricing    |
++------------+-----------+--------------------+----------------+---------+------------+
+| Mohamed    | Ben       | b.mohamed@tomba.io | Africa/Algiers | DZ      | Enterprise |
++------------+-----------+--------------------+----------------+---------+------------+
 ```

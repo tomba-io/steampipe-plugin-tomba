@@ -15,8 +15,7 @@ func tableTombaAuthor(ctx context.Context) *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listAuthor,
 			KeyColumns: []*plugin.KeyColumn{
-				{
-					Name: "url"},
+				{Name: "url"},
 			},
 		},
 		Columns: []*plugin.Column{
@@ -26,7 +25,7 @@ func tableTombaAuthor(ctx context.Context) *plugin.Table {
 				Type:        proto.ColumnType_STRING,
 				Hydrate:     urlString,
 				Transform:   transform.FromValue(),
-				Description: "The blog post url",
+				Description: "The URL of the article. For example, `https://clearbit.com/blog/company-name-to-domain-api`.",
 			},
 			{
 				Name:        "email",
@@ -36,12 +35,12 @@ func tableTombaAuthor(ctx context.Context) *plugin.Table {
 			{
 				Name:        "website_url",
 				Type:        proto.ColumnType_STRING,
-				Description: "The Company domain.",
+				Description: "The Domain of company’s website.",
 			},
 			{
 				Name:        "company",
 				Type:        proto.ColumnType_STRING,
-				Description: "The company of person (if found)",
+				Description: "The Name of company (if found).",
 			},
 			{
 				Name:        "first_name",

@@ -5,6 +5,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableTombaAccount(ctx context.Context) *plugin.Table {
@@ -17,24 +18,50 @@ func tableTombaAccount(ctx context.Context) *plugin.Table {
 		Columns: []*plugin.Column{
 			// Top columns
 			{
+				Name:        "user_id",
+				Type:        proto.ColumnType_INT,
+				Description: "Your Account USER ID.",
+			},
+			{
 				Name:        "first_name",
 				Type:        proto.ColumnType_STRING,
-				Description: "The First name of person.",
+				Description: "Your Account First name.",
 			},
 			{
 				Name:        "last_name",
 				Type:        proto.ColumnType_STRING,
-				Description: "The Last name of person.",
+				Description: "Your Account Last name.",
 			},
 			{
 				Name:        "email",
 				Type:        proto.ColumnType_STRING,
-				Description: "The email address.",
+				Description: "Your Account email address.",
 			},
 			{
 				Name:        "secret_token",
 				Type:        proto.ColumnType_STRING,
-				Description: "The API secret.",
+				Description: "Your Account API secret.",
+			},
+			{
+				Name:        "timezone",
+				Type:        proto.ColumnType_STRING,
+				Description: "Your Account timezone.",
+			},
+			{
+				Name:        "country",
+				Type:        proto.ColumnType_STRING,
+				Description: "Your Account country, Your country is detected automatically.",
+			},
+			{
+				Name:        "created_at",
+				Type:        proto.ColumnType_TIMESTAMP,
+				Description: "The date of your account's creation.",
+			},
+			{
+				Name:        "pricing",
+				Type:        proto.ColumnType_STRING,
+				Transform:   transform.FromField("Pricing.Name"),
+				Description: "The Subscription plan name.",
 			},
 		},
 	}

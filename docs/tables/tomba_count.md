@@ -2,11 +2,7 @@
 
 Get detailed information about an total email addresses we have for one domain.
 
-**NOTES**:
-
-* the `tomba_count` table
-  requires the `domain` field to be specified in all queries, defining the Domain
-  to lookup.
+The `tomba_count` table requires the `domain` field to be specified in all queries, defining the Domain to lookup.
 
 ## Examples
 
@@ -16,17 +12,19 @@ query any domain
 
 ```sql
 select
-  *
+   total as "Total Emails",
+   personal_emails as "Total Personal Emails",
+   generic_emails as "Total Generic Emails" 
 from
-  tomba_count
+   tomba_count 
 where
-  domain = 'tomba.io';
+   domain = 'tomba.io';
 ```
 
 ```
-+----------+-------+-----------------+----------------+-----------------------------+
-| domain   | total | personal_emails | generic_emails | _ctx                        |
-+----------+-------+-----------------+----------------+-----------------------------+
-| tomba.io | 20    | 7               | 13             | {"connection_name":"tomba"} |
-+----------+-------+-----------------+----------------+-----------------------------+
++--------------+-----------------------+----------------------+
+| Total Emails | Total Personal Emails | Total Generic Emails |
++--------------+-----------------------+----------------------+
+| 20           | 7                     | 13                   |
++--------------+-----------------------+----------------------+
 ```

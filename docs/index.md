@@ -22,11 +22,13 @@ query any email
 
 ```sql
 select
-  email,first_name,last_name
+   email,
+   first_name,
+   last_name 
 from
-  tomba_enrich
+   tomba_enrich 
 where
-  email = 'b.mohamed@tomba.io';
+   email = 'b.mohamed@tomba.io';
 ```
 
 ```
@@ -39,7 +41,7 @@ where
 
 ## Documentation
 
-- **[Table definitions & examples →](/plugins/turbot/tomba/tables)**
+- **[Table definitions & examples →](/plugins/tomba-io/tomba/tables)**
 
 ## Get started
 
@@ -48,7 +50,7 @@ where
 Download and install the latest tomba.io plugin:
 
 ```bash
-steampipe plugin install tomba
+steampipe plugin install tomba-io/tomba
 ```
 
 ### Configuration
@@ -57,16 +59,21 @@ Installing the latest tomba plugin will create a config file (`~/.steampipe/conf
 
 ```hcl
 connection "tomba" {
-  plugin = "tomba"
+    plugin = "tomba-io/tomba"
+    # `key`: Tomba API Key.(Required)
+    # `secret`: Tomba API secret. (Required)
 
-  # Sign up for a free API key at https://app.tomba.io/auth/register
-  # key = "xxx"
-  # secret = "xxx"
+    # Sign up for a free API and SECRET Keys at https://app.tomba.io/auth/register
+
+    # This can also be set via the `TOMBA_KEY` and `TOMBA_SECRET` environment variables.
+    
+    # key = "ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86"
+    # secret = "ts_121f9gf4-6f90-4856-9017-b12b5079adc9"
 }
 ```
 
-- `key` -  access token from tomba.io.
-- `secret` -  access token from tomba.io.
+- `key` -  api key from tomba.io.
+- `secret` -  api secret from tomba.io.
 
 Environment variables are also available as an alternate configuration method:
 
@@ -75,5 +82,5 @@ Environment variables are also available as an alternate configuration method:
 
 ## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-tomba
+- Open source: https://github.com/tomba-io/steampipe-plugin-tomba
 - Community: [Slack Channel](https://steampipe.io/community/join)

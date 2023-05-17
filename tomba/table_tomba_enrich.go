@@ -14,8 +14,7 @@ func tableTombaEnrich(ctx context.Context) *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listEnrich,
 			KeyColumns: []*plugin.KeyColumn{
-				{
-					Name: "email"},
+				{Name: "email"},
 			},
 		},
 		Columns: []*plugin.Column{

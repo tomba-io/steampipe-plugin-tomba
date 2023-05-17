@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/tomba-io/steampipe-plugin-tomba/tomba"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-tomba/tomba"
 )
 
 func main() {

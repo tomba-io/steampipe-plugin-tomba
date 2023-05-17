@@ -5,28 +5,40 @@
 Use SQL to search or verify lists of email addresses in minutes using [tomba.io](https://tomba.io).
 
 - **[Get started →](https://hub.steampipe.io/plugins/turbot/tomba)**
-- Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/tomba/tables)
+- Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/tomba-io/tomba/tables)
 - Community: [Slack Channel](https://steampipe.io/community/join)
-- Get involved: [Issues](https://github.com/turbot/steampipe-plugin-tomba/issues)
+- Get involved: [Issues](https://github.com/tomba-io/steampipe-plugin-tomba/issues)
 
 ## Quick start
 
 Install the plugin with [Steampipe](https://steampipe.io):
 
 ```shell
-steampipe plugin install tomba
+steampipe plugin install tomba-io/tomba
 ```
 
 Configure the server address in `~/.steampipe/config/tomba.spc`:
 
 ```hcl
 connection "tomba" {
-  plugin = "tomba"
+    plugin = "tomba-io/tomba"
+    # `key`: Tomba API Key.(Required)
+    # `secret`: Tomba API secret. (Required)
 
-  # Sign up for a free API key at https://app.tomba.io/auth/register
-  # key = "xxxx"
-  # secret = "xxxx"
+    # Sign up for a free API and SECRET Keys at https://app.tomba.io/auth/register
+
+    # This can also be set via the `TOMBA_KEY` and `TOMBA_SECRET` environment variables.
+    
+    # key = "ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86"
+    # secret = "ts_121f9gf4-6f90-4856-9017-b12b5079adc9"
 }
+```
+
+Or through environment variables:
+
+```sh
+export TOMBA_KEY=ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86
+export TOMBA_SECRET=ts_121f9gf4-6f90-4856-9017-b12b5079adc9
 ```
 
 Run steampipe:
@@ -39,11 +51,13 @@ enrich any Email:
 
 ```sql
 select
-  email,first_name,last_name
+   email,
+   first_name,
+   last_name 
 from
-  tomba_enrich
+   tomba_enrich 
 where
-  email = 'b.mohamed@tomba.io';
+   email = 'b.mohamed@tomba.io';
 ```
 
 ```
@@ -64,7 +78,7 @@ Prerequisites:
 Clone:
 
 ```sh
-git clone https://github.com/turbot/steampipe-plugin-tomba.git
+git clone https://github.com/tomba-io/steampipe-plugin-tomba.git
 cd steampipe-plugin-tomba
 ```
 
@@ -95,9 +109,9 @@ Further reading:
 
 ## Contributing
 
-Please see the [contribution guidelines](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md). All contributions are subject to the [Apache 2.0 open source license](https://github.com/turbot/steampipe-plugin-tomba/blob/main/LICENSE).
+Please see the [contribution guidelines](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md). All contributions are subject to the [Apache 2.0 open source license](https://github.com/tomba-io/steampipe-plugin-tomba/blob/main/LICENSE).
 
 `help wanted` issues:
 
 - [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
-- [tomba.io Plugin](https://github.com/turbot/steampipe-plugin-tomba/labels/help%20wanted)
+- [tomba.io Plugin](https://github.com/tomba-io/steampipe-plugin-tomba/labels/help%20wanted)

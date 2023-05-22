@@ -28,3 +28,24 @@ where
 | 20           | 7                     | 13                   |
 +--------------+-----------------------+----------------------+
 ```
+
+### Find Total emails on executive and sales department
+
+
+```sql
+select
+   department ->> 'executive' as executive,
+   department ->> 'sales' as sales 
+from
+   tomba_count 
+where
+   domain = 'clearbit.com';
+```
+
+```
++-----------+-------+
+| executive | sales |
++-----------+-------+
+| 5         | 9     |
++-----------+-------+
+```

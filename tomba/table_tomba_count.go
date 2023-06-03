@@ -48,12 +48,12 @@ func tableTombaCount(ctx context.Context) *plugin.Table {
 			{
 				Name:        "department",
 				Type:        proto.ColumnType_JSON,
-				Description: "The Total email on department _key_name_",
+				Description: "The Total email on department _key_name_.",
 			},
 			{
 				Name:        "seniority",
 				Type:        proto.ColumnType_JSON,
-				Description: "The Total email on seniority _key_name_",
+				Description: "The Total email on seniority _key_name_.",
 			},
 		},
 	}

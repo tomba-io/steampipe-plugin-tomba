@@ -51,13 +51,13 @@ enrich any Email:
 
 ```sql
 select
-   email,
-   first_name,
-   last_name 
+  email,
+  first_name,
+  last_name 
 from
-   tomba_enrich 
+  tomba_enrich 
 where
-   email = 'b.mohamed@tomba.io';
+  email = 'b.mohamed@tomba.io';
 ```
 
 ```

@@ -8,38 +8,27 @@ The `tomba_enrich` table requires the `email` field to be specified in all queri
 
 ### Info about an [Enrichment](https://tomba.io/enrichment)
 
-query any b2b email
-
 ```sql
 select
-   email,
-   first_name,
-   last_name 
+  email,
+  first_name,
+  last_name
 from
-   tomba_enrich 
+  tomba_enrich
 where
-   email = 'b.mohamed@tomba.io';
-```
-
-
-```
-+--------------------+------------+-----------+
-| email              | first_name | last_name |
-+--------------------+------------+-----------+
-| b.mohamed@tomba.io | Mohamed    | Ben rebia |
-+--------------------+------------+-----------+
+  email = 'b.mohamed@tomba.io';
 ```
 
 ### Find Enrichment Emails Sources
 
 ```sql
 select
-   p ->> 'uri' as uri,
-   p ->> 'extracted_on' as extracted_on,
-   p ->> 'still_on_page' as still_on_page 
+  p ->> 'uri' as uri,
+  p ->> 'extracted_on' as extracted_on,
+  p ->> 'still_on_page' as still_on_page
 from
-   tomba_enrich,
-   jsonb_array_elements(sources) as p 
+  tomba_enrich,
+  jsonb_array_elements(sources) as p
 where
-   email = 'b.mohamed@tomba.io';
+  email = 'b.mohamed@tomba.io';
 ```

@@ -10,12 +10,12 @@ query
 
 ```sql
 select
-   first_name,
-   last_name,
-   email,
-   timezone,
-   country,
-   pricing
+  first_name,
+  last_name,
+  email,
+  timezone,
+  country,
+  pricing 
 from
-   tomba_account;
+  tomba_account;
 ```

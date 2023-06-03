@@ -8,36 +8,25 @@ The `tomba_count` table requires the `domain` field to be specified in all queri
 
 ### Info about an Email Count
 
-query any domain
-
 ```sql
 select
-   total as "Total Emails",
-   personal_emails as "Total Personal Emails",
-   generic_emails as "Total Generic Emails" 
+  total as "Total Emails",
+  personal_emails as "Total Personal Emails",
+  generic_emails as "Total Generic Emails"
 from
-   tomba_count 
+  tomba_count
 where
-   domain = 'tomba.io';
-```
-
-```
-+--------------+-----------------------+----------------------+
-| Total Emails | Total Personal Emails | Total Generic Emails |
-+--------------+-----------------------+----------------------+
-| 20           | 7                     | 13                   |
-+--------------+-----------------------+----------------------+
+  domain = 'tomba.io';
 ```
 
 ### Find Total emails on executive and sales department
 
-
 ```sql
 select
-   department ->> 'executive' as executive,
-   department ->> 'sales' as sales 
+  department ->> 'executive' as executive,
+  department ->> 'sales' as sales
 from
-   tomba_count 
+  tomba_count
 where
-   domain = 'clearbit.com';
+  domain = 'clearbit.com';
 ```

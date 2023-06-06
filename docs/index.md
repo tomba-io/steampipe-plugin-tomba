@@ -2,7 +2,7 @@
 organization: tomba-io
 category: ["saas"]
 icon_url: "/images/plugins/tomba-io/tomba.svg"
-brand_color: "#1853DB"
+brand_color: "#1D6CE2"
 display_name: "tomba.io"
 short_name: "tomba"
 description: "Steampipe plugin to query Domain or Email information from tomba.io."
@@ -59,26 +59,27 @@ Installing the latest tomba plugin will create a config file (`~/.steampipe/conf
 
 ```hcl
 connection "tomba" {
-    plugin = "tomba-io/tomba"
-    # `key`: Tomba API Key.(Required)
-    # `secret`: Tomba API secret. (Required)
+  plugin = "tomba-io/tomba"
 
-    # Sign up for a free API and SECRET Keys at https://app.tomba.io/auth/register
+  # `key`: Tomba API Key. (Required).
+  # `secret`: Tomba API secret. (Required).
+  # Sign up for a free API and Secret keys at https://app.tomba.io/auth/register  
+  # This can also be set via the `TOMBA_KEY` and `TOMBA_SECRET` environment variables.  
 
-    # This can also be set via the `TOMBA_KEY` and `TOMBA_SECRET` environment variables.
-
-    # key = "ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86"
-    # secret = "ts_121f9gf4-6f90-4856-9017-b12b5079adc9"
+  # key = "ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86"
+  # secret = "ts_121f9gf4-6f90-4856-9017-b12b5079adc9"
 }
 ```
 
-- `key` - api key from tomba.io.
-- `secret` - api secret from tomba.io.
+- `key` - API key from tomba.io.
+- `secret` - API secret from tomba.io.
 
-Environment variables are also available as an alternate configuration method:
+Alternatively, you can also use the standard Tomba environment variables to obtain credentials **only if other arguments (`key`and `secret`) are not specified** in the connection:
 
-- `TOMBA_KEY`
-- `TOMBA_SECRET`
+```sh
+export TOMBA_KEY=ta_d40f89cc3b7f59a0638e1234a22fdfa9d3b86
+export TOMBA_SECRET=ts_121f9gf4-6f90-4856-9017-b12b5079adc9
+```
 
 ## Get involved
 

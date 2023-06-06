@@ -19,7 +19,7 @@ where
   url = 'https://www.linkedin.com/in/alex-maccaw-ab592978';
 ```
 
-### Find Enrichment Emails Sources
+### Find Enrichment Email Sources
 
 ```sql
 select

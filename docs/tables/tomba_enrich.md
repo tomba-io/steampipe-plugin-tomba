@@ -19,7 +19,7 @@ where
   email = 'b.mohamed@tomba.io';
 ```
 
-### Find Enrichment Emails Sources
+### Find Enrichment Email Sources
 
 ```sql
 select
@@ -29,6 +29,21 @@ select
 from
   tomba_enrich,
   jsonb_array_elements(sources) as p
+where
+  email = 'b.mohamed@tomba.io';
+```
+
+### Get the social media handles of an email
+
+```sql
+select
+  email,
+  first_name,
+  last_name,
+  twitter,
+  linkedin
+from
+  tomba_enrich
 where
   email = 'b.mohamed@tomba.io';
 ```

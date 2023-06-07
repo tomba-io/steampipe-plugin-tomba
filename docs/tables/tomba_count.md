@@ -19,7 +19,7 @@ where
   domain = 'tomba.io';
 ```
 
-### Find Total emails on executive and sales department
+### Find the total number of emails in executive and sales department
 
 ```sql
 select

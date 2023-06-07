@@ -19,7 +19,7 @@ where
   url = 'https://clearbit.com/blog/company-name-to-domain-api';
 ```
 
-### Find Author Finder Emails Sources
+### Find the email sources of the Author Finder
 
 ```sql
 select
@@ -29,6 +29,21 @@ select
 from
   tomba_author,
   jsonb_array_elements(sources) as p
+where
+  url = 'https://clearbit.com/blog/company-name-to-domain-api';
+```
+
+### Get the social media handles of the author
+
+```sql
+select
+  email,
+  first_name,
+  last_name,
+  twitter,
+  linkedin
+from
+  tomba_author
 where
   url = 'https://clearbit.com/blog/company-name-to-domain-api';
 ```

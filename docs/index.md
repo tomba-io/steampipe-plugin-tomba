@@ -12,7 +12,7 @@ og_image: "/images/plugins/tomba-io/tomba-social-graphic.png"
 
 # tomba.io + Steampipe
 
-[tomba.io](https://tomba.io) is an API for Search or verify lists of email addresses in minutes.
+[Tomba](https://tomba.io) is a service that enables you to find and verify professional email addresses.
 
 [Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
 
